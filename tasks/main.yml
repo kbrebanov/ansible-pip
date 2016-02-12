@@ -1,2 +1,10 @@
 ---
 # tasks file for pip
+
+- name: Include distribution specific variables
+  include_vars: "{{ ansible_distribution }}.yml"
+  tags: pip
+
+- include: Ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+  tags: pip

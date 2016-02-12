@@ -1,0 +1,15 @@
+---
+# tasks file for pip (Ubuntu specific)
+
+- name: Install pip packages
+  become: yes
+  become_user: root
+  become_method: sudo
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - "{{ pip_packages }}"
+  tags:
+    - pip
