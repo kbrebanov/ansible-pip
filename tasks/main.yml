@@ -3,8 +3,10 @@
 
 - name: Include distribution specific variables
   include_vars: "{{ ansible_distribution }}.yml"
-  tags: pip
+  tags:
+    - pip
 
 - include: Ubuntu.yml
   when: ansible_distribution == "Ubuntu"
-  tags: pip
+  tags:
+    - pip
