@@ -24,7 +24,7 @@ Example Playbook
 ----------------
 
 Install pip
-```
+```yaml
 - hosts: all
   roles:
     - kbrebanov.pip
